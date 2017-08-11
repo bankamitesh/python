@@ -4,7 +4,7 @@ import json
 def main(): 
 
     fname1 = "/Users/mitesh/code/bitbucket/python/atree01__raw__3ILnGc6S.csv"
-    fname2="/Users/mitesh/code/bitbucket/python/parsed.json"
+    fname2 = "/Users/mitesh/code/bitbucket/python/parsed.json"
     
     j = []
 
