@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Basic Line Plot</title>
+    </head>
+    <body>
+        <div id="myDiv" ><!-- Plotly chart will be drawn inside this DIV --></div>
+        <script src="web/assets/js/plotly-latest.min.js"></script>
+        <script>
+            var fname = "/Users/mitesh/code/bitbucket/python/parsed.json"
+            Plotly.d3.json(fname, function(error, data) {
+                if (error) return console.warn(error);
+                var x1=[];
+                var y1=[];
+                for(var i=0;i<data.features.length;i++){
+                    x1[i]=data.features[i].properties.Date;
+                    y1[i]=data.features[i].properties.Temperature;
+                }
+
+                var trace1 = { 
+                    x: x1,
+                    y: y1,
+                    mode: 'lines'
+                }
+            
+                var data = [trace1];
+                var layout = {
+                title:'Temperature',
+                xaxis: {
+                    title: 'Date'
+                },
+                yaxis: {
+                    title: 'Temperature'
+                }
+                };
+                Plotly.newPlot('myDiv', data, layout);
+            });
+        </script>
+    </body>
+</html>
+
+        
